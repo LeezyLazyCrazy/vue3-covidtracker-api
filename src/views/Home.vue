@@ -4,12 +4,16 @@
     <DataBoxes :stats="stats" />
     <CountrySelect @get-country="getCountryData" :countries="countries"/>
 
-    <button @click="clearCountryData"
-      v-if="stats.Country" class="bg-green-700 text-white rounded p-3 mt-10 focus:outline-none hover:bg-green-600">
+    <button 
+    @click="clearCountryData"
+      v-if="stats.Country"
+      class="bg-green-700 text-white rounded p-3 mt-10 focus:outline-none hover:bg-green-600">
       Clear Country
     </button>
   </main>
-  <main class="flex flex-col align-center justify-center text-center" v-else>
+  <main 
+    v-else 
+    class="flex flex-col align-center justify-center text-center" >
     <div class="text-gray-500 text-3xl mt-10 mb-6">
       Fetching Data
     </div>
@@ -34,7 +38,7 @@ export default {
       loading: true,
       title: 'Global',
       dataDate: '',
-      status: {},
+      stats: {},
       countries: [],
       loadingImage: require('../assets/hourglass.gif')
     }
@@ -57,10 +61,10 @@ export default {
       this.loading = false
     },
   },
-  created() {
+  async created(){
     const data = this.fetchCovidData()
     this.dataDate = data.dataDate
-    this.status = data.Global
+    this.stats = data.Global
     this.countries = data.Countries
     this.lading = false
   },

@@ -16,5 +16,6 @@ export default {
     timestamp: function(){
       return moment(this.dataDate).format('MMMMM Do YYYY, h:mm:ss a')
     }
-  }  }
+  }  
+}
 </script>
