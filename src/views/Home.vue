@@ -62,11 +62,11 @@ export default {
     },
   },
   async created(){
-    const data = this.fetchCovidData()
+    const data = await this.fetchCovidData();
     this.dataDate = data.dataDate
     this.stats = data.Global
     this.countries = data.Countries
-    this.lading = false
+    this.loading = false
   },
 }
 </script>
