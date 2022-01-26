@@ -62,7 +62,7 @@ export default {
     },
   },
   async created(){
-    const data = await this.fetchCovidData();
+    const data = await this.fetchCovidData()
     this.dataDate = data.dataDate
     this.stats = data.Global
     this.countries = data.Countries
